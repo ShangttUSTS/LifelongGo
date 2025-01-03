@@ -261,3 +261,19 @@ def load_normal_forms(go_file, terms_dict):
                 rel, go2 = right.split(' some ')
                 nf4.append((get_index(go1), get_rel_index(rel), get_index(go2)))
     return nf1, nf2, nf3, nf4, relations, zclasses
+import subprocess
+def run_diamond_blastp_and_get_first_result(database, fasta, output_file):
+    command = [
+        "diamond",
+        "blastp",
+        "--sensitive",
+        "-d", database,
+        "-q", fasta,
+        "-o", output_file
+    ]
+    try:
+        subprocess.run(command, check=True)
+        myLogging.info(f"process success!")
+    except subprocess.CalledProcessError as e:
+        myLogging.info(f"Find error: {e}")
+        return None
