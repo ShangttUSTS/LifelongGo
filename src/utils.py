@@ -363,6 +363,17 @@ def to_onehot(seq, maxlen=MAXLEN, start=0):
     onehot[0, 0:start] = 1
     onehot[0, start + l:] = 1
     return onehot
-
-
+def get_color(score):
+    if score < 0.5:
+        return "#F76363"  # 浅红色
+    elif score < 0.6:
+        return "#F9BE56"  # 浅橙色
+    elif score < 0.7:
+        return "#F2E659"  # 浅黄色
+    elif score < 0.8:
+        return "#90D4F2"  # 浅蓝色
+    elif score < 0.9:
+        return "#56D9CD"  # 浅青色
+    else:
+        return "#4CC97C"  # 浅绿色
 
