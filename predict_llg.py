@@ -23,9 +23,9 @@ from functools import partial
 from src.logging import MyLog
 myLogging = MyLog().logger
 @ck.command()
-@ck.option('--in-file', '-if', help='Input FASTA file', default='example/A0A017SE81.fasta', required=True)
+@ck.option('--in-file', '-if', help='Input FASTA file', default='example/Q5H9Q6.fasta', required=True)
 @ck.option('--in-db', '-id', help='Input Diamond DB file', default='initData/swissprot_exp.dmnd', required=True)
-@ck.option('--in-pdb', '-ip', help='Input PDB file',  default='example/A0A017SE81.pdb', required=True)
+@ck.option('--in-pdb', '-ip', help='Input PDB file',  default='example/Q5H9Q6.pdb', required=True)
 @ck.option(
     '--data-root', '-dr', default='data',
     help='Prediction model')
