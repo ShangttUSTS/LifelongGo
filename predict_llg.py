@@ -201,7 +201,7 @@ def case_study(in_file, in_db,in_pdb, data_root,result_root,cpd_model, model_dir
         # 检查请求是否成功
         if response.status_code == 200:
             # 保存图片
-            with open(f'{results}/{ont}_go_visualization.png', 'wb') as f:
+            with open(f'{result_root}/{ont}_go_visualization.png', 'wb') as f:
                 f.write(response.content)
             myLogging.info("Image saved successfully.")
         else:
